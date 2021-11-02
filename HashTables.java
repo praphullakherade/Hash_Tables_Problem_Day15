@@ -12,6 +12,7 @@ public class HashTables {
         String sentence ="Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
         String[] string=sentence.toLowerCase().split(" ");
 
+
         int noOfSlotes = 10;
 
         Object listOfObj[] = new Object[noOfSlotes];
@@ -34,10 +35,16 @@ public class HashTables {
                 operation.slotData(str2, listOfObj[key]);
                 count=0;
             }
+
+
         }
 
         for (int i = 0; i < listOfObj.length; i++) {
             operation.showSlotedData(listOfObj[i], string[i].hashCode()%10);
         }
+
+        operation.remove("avoidable",("avoidable".hashCode()%10),listOfObj[("avoidable".hashCode()%10)]);
+        System.out.println(Arrays.toString(string));
+
     }
 }
